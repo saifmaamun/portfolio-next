@@ -9,8 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        glowinglime: "#39FF14",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
+      },
+      boxShadow: {
+        glow: "0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5)",
       },
     },
   },
