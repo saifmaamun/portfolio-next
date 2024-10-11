@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row  items-center justify-between min-h-screen my-16  md:px-16">
+    <section className="flex flex-col md:flex-row  items-center justify-between min-h-screen md:mt-0 mt-16 mb-16  md:px-16">
       {/* Left content */}
       <div className="md:w-1/2">
         <motion.h1
@@ -48,6 +48,9 @@ const Hero: React.FC = () => {
             delaySpeed={1000}
           />
         </motion.p>
+        <motion.button className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300">
+          Hire me
+        </motion.button>
       </div>
 
       {/* Right image */}
@@ -59,11 +62,12 @@ const Hero: React.FC = () => {
       >
         <div className="relative">
           <Image
-            src="https://i.ibb.co.com/n6vPBMv/img.png" // Update this path to your image
+            // src="https://i.ibb.co.com/n6vPBMv/img.png" // Update this path to your image
+            src="https://i.ibb.co.com/TcG3NN0/rsz-img.png" // Update this path to your image
             alt="Saif Maamun"
             width={400}
             height={400}
-            className="rounded-b-full object-cover"
+            className="rounded-full  bg-glowinglime border-glowinglime   border-4 shadow-glow bg-opacity-20 object-cover"
           />
           {/* Background shapes */}
 
@@ -74,19 +78,19 @@ const Hero: React.FC = () => {
           />
           <motion.div
             className="absolute -z-10 w-64 h-64 sm:w-64 sm:h-64 bg-glowinglime  rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
-            style={{ top: "30%", left: "10%" }}
+            style={{ top: "30%", left: "13%" }}
             transition={{ duration: 2, repeat: Infinity }}
           />
-          <motion.div
+          {/* <motion.div
             className="absolute -z-10 w-64 h-64 sm:w-64 sm:h-64 bg-glowinglime  rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
-            style={{ top: "50%", left: "10%" }}
+            style={{ top: "50%", left: "15%" }}
             transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.div
+          /> */}
+          {/* <motion.div
             className="absolute -z-10 w-64 h-64 sm:w-64 sm:h-64 bg-glowinglime  rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
             style={{ top: "70%", left: "10%" }}
             transition={{ duration: 2, repeat: Infinity }}
-          />
+          /> */}
         </div>
       </motion.div>
     </section>

@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         <Link href="/" className="hover:text-glowinglime py-4 ps-4">
           <h1 className="text-2xl font-bold text-glowinglime">Saif Maamun</h1>
         </Link>
-        <div className="md:hidden ml:auto">
+        <div className="md:hidden ml:auto me-4">
           <button onClick={toggleMenu}>
             {isOpen ? (
               <FaTimes className="text-white" />
