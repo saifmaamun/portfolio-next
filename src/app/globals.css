@@ -14,3 +14,16 @@ body {
     0 0 20px rgba(57, 255, 20, 0.6),
     0 0 30px rgba(57, 255, 20, 0.4);
 }
+.skills-section {
+  @apply flex flex-col md:flex-row items-center justify-center md:justify-between;
+}
+
+.floating-icons {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.skill-icon {
+  @apply absolute cursor-pointer transition-transform duration-500;
+}

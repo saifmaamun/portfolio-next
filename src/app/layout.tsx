@@ -33,9 +33,7 @@ export default function RootLayout({
         {/* <ParticlesBackground /> */}
 
         <Navbar />
-        <main className="relative z-10 max-w-[1280px] mx-auto px-4">
-          {children}
-        </main>
+        <main className="relative z-10 container mx-auto px-4">{children}</main>
         <Footer />
       </body>
     </html>

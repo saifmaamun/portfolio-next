@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row  items-center justify-between min-h-screen md:mt-0 mt-16 mb-16  md:px-16">
+    <section className="flex flex-col md:flex-row  items-center text-white justify-between min-h-screen md:mt-0 mt-16 mb-16  ">
       {/* Left content */}
       <div className="md:w-1/2">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold text-glowinglime mb-4"
+          className="text-5xl md:text-7xl font-bold  mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -18,7 +19,7 @@ const Hero: React.FC = () => {
           Hi, I&apos;m
         </motion.h1>
         <motion.h2
-          className="text-4xl md:text-6xl font-semibold text-white mb-4"
+          className="text-4xl md:text-6xl font-semibold text-glowinglime  mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -48,8 +49,13 @@ const Hero: React.FC = () => {
             delaySpeed={1000}
           />
         </motion.p>
-        <motion.button className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300">
-          Hire me
+        <motion.button>
+          <Link
+            href="#contact"
+            className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300"
+          >
+            Hire me
+          </Link>
         </motion.button>
       </div>
 
