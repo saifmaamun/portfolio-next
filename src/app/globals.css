@@ -15,7 +15,7 @@ body {
     0 0 30px rgba(57, 255, 20, 0.4);
 }
 .skills-section {
-  @apply flex flex-col md:flex-row items-center justify-center md:justify-between;
+  @apply flex flex-col lg:flex-row items-center justify-center md:justify-between;
 }
 
 .floating-icons {
@@ -26,4 +26,16 @@ body {
 
 .skill-icon {
   @apply absolute cursor-pointer transition-transform duration-500;
+}
+
+.skills-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-10px);
 }

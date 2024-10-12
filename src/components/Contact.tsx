@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20" data-aos="fade-up">
+    <section id="contact" className="my-16" data-aos="fade-up">
       <div className="container mx-auto">
         <h3 className="text-3xl mb-4">Contact Me</h3>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

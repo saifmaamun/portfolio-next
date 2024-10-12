@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section id="services" className="py-20" data-aos="fade-up">
+    <section id="services" className="my-16" data-aos="fade-up">
       <div className="container mx-auto">
         <h3 className="text-3xl mb-4">My Services</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

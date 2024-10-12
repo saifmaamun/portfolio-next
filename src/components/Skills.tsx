@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+const sections = ["Frontend", "Backend", "Database", "Tools"];
 
 type Skill = {
   name: string;
@@ -265,70 +266,227 @@ const skillsData: Skill[] = [
   // Add more skills here...
 ];
 
+const skillsDetails = {
+  Frontend: {
+    title: "Frontend Development",
+    description:
+      "Building responsive and user-friendly interfaces using modern technologies.",
+    technologies: [
+      {
+        name: "React",
+        details: "Highly proficient in building single-page applications.",
+      },
+      {
+        name: "Next.js",
+        details:
+          "Experience in server-side rendering and static site generation.",
+      },
+      {
+        name: "TypeScript",
+        details: "Strong typing for better code quality and maintainability.",
+      },
+      {
+        name: "CSS3",
+        details:
+          "Expert in styling using Tailwind CSS and custom CSS frameworks.",
+      },
+    ],
+  },
+  Backend: {
+    title: "Backend Development",
+    description: "Developing robust server-side applications and APIs.",
+    technologies: [
+      {
+        name: "Node.js",
+        details: "Building scalable server-side applications.",
+      },
+      { name: "Express.js", details: "Creating RESTful APIs with ease." },
+      {
+        name: "MongoDB",
+        details: "Working with NoSQL databases for efficient data storage.",
+      },
+      {
+        name: "JWT & OAuth",
+        details: "Implementing secure authentication methods.",
+      },
+    ],
+  },
+  Database: {
+    title: "Databases",
+    description: "Designing and managing databases for optimal performance.",
+    technologies: [
+      {
+        name: "MongoDB",
+        details: "Skilled in schema design and query optimization.",
+      },
+      {
+        name: "Mongoose",
+        details: "Using Mongoose for data modeling and validation.",
+      },
+      {
+        name: "PostgreSQL",
+        details: "Experience with relational databases and SQL queries.",
+      },
+      {
+        name: "Database Indexing",
+        details: "Improving query performance with proper indexing strategies.",
+      },
+    ],
+  },
+  Tools: {
+    title: "Tools & Platforms",
+    description:
+      "Utilizing various tools to enhance productivity and streamline development.",
+    technologies: [
+      {
+        name: "Git",
+        details: "Version control and collaboration with Git and GitHub.",
+      },
+      {
+        name: "Docker",
+        details:
+          "Containerizing applications for consistent development environments.",
+      },
+      {
+        name: "CI/CD",
+        details: "Implementing continuous integration and delivery pipelines.",
+      },
+      { name: "Figma", details: "Designing UI/UX mockups and prototypes." },
+    ],
+  },
+};
+
 export const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("Frontend");
 
   return (
-    <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between py-16">
-      {/* Left Side - Skill Icons */}
-      <div className="relative w-full md:w-1/2 h-96 flex justify-center items-center">
-        <div className="floating-icons relative w-[400px] h-[400px]">
-          {skillsData.map((skill) => (
-            <motion.div
-              key={skill.name}
-              className="absolute skill-icon"
-              style={{
-                top: skill.position.top,
-                left: skill.position.left,
-              }}
-              whileHover={{ scale: 1.3, rotate: 360 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              onHoverStart={() => setSelectedSkill(skill)}
-              onHoverEnd={() => setSelectedSkill(null)}
-            >
-              {/* <Image
-                src="./javascript-svgrepo-com.svg"
-                alt={skill.name}
-                width={50}
-                height={50}
-              /> */}
+    <section id="skills" className="my-16">
+      <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold">
+        Skills
+      </h2>
 
-              {skill.icon}
+      <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between md:min-h-screen lg:min-h-screen  pb-16">
+        {/* Left Side - Floating Skill Icons */}
+        <div className="relative w-full md:w-1/2 h-96 flex justify-center items-center">
+          <div className="floating-icons relative w-[400px] h-[400px]">
+            {skillsData.map((skill) => (
+              <motion.div
+                key={skill.name}
+                className="absolute skill-icon"
+                style={{
+                  top: skill.position.top,
+                  left: skill.position.left,
+                }}
+                whileHover={{ scale: 1.3, rotate: 360 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                onHoverStart={() => setSelectedSkill(skill)}
+                onHoverEnd={() => setSelectedSkill(null)}
+              >
+                {skill.icon}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Side - Skill Information */}
+        <div className="skill-info w-full md:w-1/2 p-6 md:p-10 text-center md:text-left">
+          {/* If hovering over a skill, show its info; else show default */}
+          {selectedSkill ? (
+            <motion.div
+              key={selectedSkill.name}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <h3 className="text-3xl font-bold">{selectedSkill.name}</h3>
+              <p className="text-lg mt-4">{selectedSkill.description}</p>
+              <p className="mt-2">
+                Experience: {selectedSkill.experience} years
+              </p>
+              <p className="mt-2">Projects: {selectedSkill.projects}</p>
+              <p className="mt-2">Proficiency: {selectedSkill.proficiency}</p>
             </motion.div>
-          ))}
+          ) : (
+            <>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <h3 className="text-4xl font-bold text-glowinglime mb-6">
+                  Overall Skills Summary
+                </h3>
+                <p className="text-lg text-gray-300 mb-8">
+                  I am a full-stack developer with expertise in several
+                  technologies across frontend, backend, databases, and tools.
+                  Below is a summary of my skills.
+                </p>
+              </motion.div>
+
+              {/* Buttons for different sections */}
+              <div className="relative mb-6 flex justify-center md:justify-start gap-8">
+                {sections.map((section) => (
+                  <motion.button
+                    key={section}
+                    className={`text-lg font-semibold ${
+                      activeSection === section
+                        ? "text-glowinglime"
+                        : "text-gray-400"
+                    } relative`}
+                    onClick={() => setActiveSection(section)}
+                    whileHover={{ color: "#39FF14" }}
+                  >
+                    {section}
+                    {/* Active Underline Indicator */}
+                    {activeSection === section && (
+                      <motion.div
+                        className="underline"
+                        layoutId="underline"
+                        initial={false}
+                        animate={{
+                          width: "100%",
+                          height: 2,
+                          backgroundColor: "#39FF14",
+                        }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+
+              {/* Detailed Info of the Selected Section */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-2xl font-bold text-glowinglime">
+                  {skillsDetails[activeSection].title}
+                </h3>
+                <p className="text-gray-300 mt-4">
+                  {skillsDetails[activeSection].description}
+                </p>
+                <div className="mt-6">
+                  {skillsDetails[activeSection].technologies.map((tech) => (
+                    <div
+                      key={tech.name}
+                      className="flex justify-between bg-gray-800 p-4 rounded-md mb-2"
+                    >
+                      <span className="font-semibold text-glowinglime">
+                        {tech.name}
+                      </span>
+                      <span className="text-gray-300">{tech.details}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </>
+          )}
         </div>
       </div>
-
-      {/* Right Side - Skill Information */}
-      <div className="skill-info w-full md:w-1/2 p-6 md:p-10 text-center md:text-left">
-        {selectedSkill ? (
-          <motion.div
-            key={selectedSkill.name}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h3 className="text-3xl font-bold">{selectedSkill.name}</h3>
-            <p className="text-lg mt-4">{selectedSkill.description}</p>
-            <p className="mt-2">Experience: {selectedSkill.experience} years</p>
-            <p className="mt-2">Projects: {selectedSkill.projects}</p>
-            <p className="mt-2">Proficiency: {selectedSkill.proficiency}</p>
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h3 className="text-4xl font-bold">Overall Skills Summary</h3>
-            <p className="text-lg mt-4">
-              I have expertise in several technologies, with a strong focus on
-              full-stack development...
-            </p>
-          </motion.div>
-        )}
-      </div>
-    </div>
+    </section>
   );
 };
 export default Skills;

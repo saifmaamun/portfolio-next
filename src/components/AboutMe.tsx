@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const AboutMe = () => {
   return (
-    <section id="about" className=" mx-auto py-16  lg:py-24">
+    <section id="about" className=" my-16">
       <div className="grid grid-cols-1  gap-8">
         {/* Left Column - About Me Content */}
         <motion.div
