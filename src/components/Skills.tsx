@@ -277,6 +277,10 @@ const skillsDetails = {
         details: "Highly proficient in building single-page applications.",
       },
       {
+        name: "Redux",
+        details: "Highly proficient in building single-page applications.",
+      },
+      {
         name: "Next.js",
         details:
           "Experience in server-side rendering and static site generation.",
@@ -284,11 +288,6 @@ const skillsDetails = {
       {
         name: "TypeScript",
         details: "Strong typing for better code quality and maintainability.",
-      },
-      {
-        name: "CSS3",
-        details:
-          "Expert in styling using Tailwind CSS and custom CSS frameworks.",
       },
     ],
   },
@@ -306,7 +305,11 @@ const skillsDetails = {
         details: "Working with NoSQL databases for efficient data storage.",
       },
       {
-        name: "JWT & OAuth",
+        name: "Mongoose",
+        details: "Working with NoSQL databases for efficient data storage.",
+      },
+      {
+        name: "JWT , OAuth , Firebase",
         details: "Implementing secure authentication methods.",
       },
     ],
@@ -323,10 +326,7 @@ const skillsDetails = {
         name: "Mongoose",
         details: "Using Mongoose for data modeling and validation.",
       },
-      {
-        name: "PostgreSQL",
-        details: "Experience with relational databases and SQL queries.",
-      },
+
       {
         name: "Database Indexing",
         details: "Improving query performance with proper indexing strategies.",
@@ -342,11 +342,7 @@ const skillsDetails = {
         name: "Git",
         details: "Version control and collaboration with Git and GitHub.",
       },
-      {
-        name: "Docker",
-        details:
-          "Containerizing applications for consistent development environments.",
-      },
+
       {
         name: "CI/CD",
         details: "Implementing continuous integration and delivery pipelines.",
@@ -355,10 +351,11 @@ const skillsDetails = {
     ],
   },
 };
+type Section = keyof typeof skillsDetails;
 
 export const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
-  const [activeSection, setActiveSection] = useState<string>("Frontend");
+  const [activeSection, setActiveSection] = useState<Section>("Frontend");
 
   return (
     <section id="skills" className="my-16">
@@ -366,7 +363,8 @@ export const Skills = () => {
         Skills
       </h2>
 
-      <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between md:min-h-screen lg:min-h-screen  pb-16">
+      {/* <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen pb-16">  */}
+      <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between py-16 lg:min-h-screen md:min-h-screen">
         {/* Left Side - Floating Skill Icons */}
         <div className="relative w-full md:w-1/2 h-96 flex justify-center items-center">
           <div className="floating-icons relative w-[400px] h-[400px]">
@@ -434,7 +432,7 @@ export const Skills = () => {
                         ? "text-glowinglime"
                         : "text-gray-400"
                     } relative`}
-                    onClick={() => setActiveSection(section)}
+                    onClick={() => setActiveSection(section as Section)}
                     whileHover={{ color: "#39FF14" }}
                   >
                     {section}
