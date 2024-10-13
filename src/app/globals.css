@@ -39,3 +39,27 @@ body {
 .skills-card:hover {
   transform: translateY(-10px);
 }
+
+.service-card {
+  transition: transform 4s ease-in-out, background-color 1s, color 1s , box-shadow 1s;
+  will-change: transform, box-shadow;
+}
+
+.service-card:hover {
+  background-color: #fff;
+  /* glowing lime color */
+  box-shadow: 0 15px 30px rgba(50, 205, 50, 0.7);
+  /* glowing lime shadow */
+}
+
+.service-card:hover h3 {
+  color: #000;
+ font-weight: 700;
+}
+
+.service-card:hover p {
+  
+  color: #1f2937;
+  
+
+}
