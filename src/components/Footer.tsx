@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             Feel free to contact me via email or connect on my social media
             channels. Let&apos;s collaborate and build something great!
           </p>
-          <p className="text-lg">
+          <div className="text-lg">
             <div className="flex justify-start items-center space-x-4">
               <svg
                 width="800px"
@@ -82,8 +82,8 @@ const Footer: React.FC = () => {
                 saifmaamun@gmail.com
               </a>
             </div>
-          </p>
-          <p className="text-lg">
+          </div>
+          <div className="text-lg">
             <div className="flex justify-start items-center space-x-4">
               <svg
                 width="800px"
@@ -134,8 +134,8 @@ const Footer: React.FC = () => {
                 +8801305797595
               </a>
             </div>
-          </p>
-          <p className="text-lg">
+          </div>
+          <div className="text-lg">
             <div className="flex justify-start items-center space-x-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
                 +8801305797595
               </a>
             </div>
-          </p>
+          </div>
         </div>
 
         {/* Quick Links */}
