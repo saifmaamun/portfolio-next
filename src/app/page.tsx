@@ -39,8 +39,8 @@ export default function Home() {
         <Hero />
         <AboutMe />
         <Experiences />
-        <Skills />
         <Services />
+        <Skills />
         <Works />
         <Contact />
         {/* <UniqueSection /> */}

@@ -34,7 +34,7 @@ const experiences: ExperienceItem[] = [
 
 const Experiences: React.FC = () => {
   return (
-    <section id="experiences" className="my-16">
+    <section id="experiences" className="py-36">
       <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold mb-12">
         Experience
       </h2>

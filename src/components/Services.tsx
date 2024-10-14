@@ -30,13 +30,13 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="my-16" data-aos="fade-up">
-      <h2 className="text-left text-4xl text-glowinglime text-shadow-glow mb-4 font-bold">
+    <section id="services" className="py-36" data-aos="fade-up">
+      <h2 className="text-left text-4xl text-white text-shadow-glow mb-4 font-bold">
         Services
       </h2>
-      <div className="services-section py-16 bg-gray-900 text-white">
+      <div className="services-section py-16 bg-gray-900 rounded-2xl text-white">
         <h2 className="text-4xl font-bold text-center mb-8 text-glowinglime">
-          My Services
+          What I Offer
         </h2>
         <p className="text-lg text-center text-gray-300 mb-8">
           As a web developer, I offer a range of services to build, maintain,
@@ -54,11 +54,6 @@ const Services = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              {/* Icon if necessary */}
-              <div className="icon absolute -top-8 left-1/2 transform -translate-x-1/2">
-                {service.icon}
-              </div>
-
               <h3 className="text-2xl font-semibold mb-4 text-white">
                 {service.title}
               </h3>

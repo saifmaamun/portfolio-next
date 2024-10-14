@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row  items-center text-white justify-between my-16 min-h-screen">
+    <section className="flex flex-col md:flex-row  items-center text-white  justify-between  py-36">
       {/* Left content */}
-      <div className="md:w-1/2">
+      <div className="md:w-1/2 p-2 ">
         <motion.h1
           className="text-5xl md:text-7xl font-bold  mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -61,14 +61,13 @@ const Hero: React.FC = () => {
 
       {/* Right image */}
       <motion.div
-        className="relative md:w-1/2 flex justify-center items-center mt-10 md:mt-0"
+        className="relative  md:w-1/2 flex justify-center items-center mt-10 md:mt-0"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       >
         <div className="relative">
           <Image
-            // src="https://i.ibb.co.com/n6vPBMv/img.png" // Update this path to your image
             src="https://i.ibb.co.com/TcG3NN0/rsz-img.png" // Update this path to your image
             alt="Saif Maamun"
             width={400}

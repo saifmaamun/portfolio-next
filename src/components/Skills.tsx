@@ -358,13 +358,13 @@ export const Skills = () => {
   const [activeSection, setActiveSection] = useState<Section>("Frontend");
 
   return (
-    <section id="skills" className="my-16">
+    <section id="skills" className="py-36">
       <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold">
         Skills
       </h2>
 
       {/* <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen pb-16">  */}
-      <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between py-16 lg:min-h-screen md:min-h-screen">
+      <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen">
         {/* Left Side - Floating Skill Icons */}
         <div className="relative w-full md:w-1/2 h-96 flex justify-center items-center">
           <div className="floating-icons relative w-[400px] h-[400px]">

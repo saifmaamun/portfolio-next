@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa"; // Add FaBars and FaTimes for the burger menu
+import Image from "next/image";
+import logo from "../assets/5logo.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +12,12 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="bg-black p-x-4 p-y-2 sticky top-0 z-50">
+    <nav className="bg-black p-x-4 p-y-2 sticky top-0 z-50 mb-16">
       <div className="container mx-auto flex justify-between items-center flex-wrap">
-        <Link href="/" className="hover:text-glowinglime py-4 ps-4">
-          <h1 className="text-2xl font-bold text-glowinglime">Saif Maamun</h1>
+        <Link href="/" className="hover:text-glowinglime  ps-4">
+          <Image src={logo} alt="logo" className="w-full h-16" />
+
+          {/* <h1 className="text-2xl font-bold text-glowinglime">Saif Maamun</h1> */}
         </Link>
         <div className="md:hidden ml:auto me-4">
           <button onClick={toggleMenu}>
@@ -32,7 +36,7 @@ const Navbar: React.FC = () => {
         >
           <li>
             <Link
-              href="#hero"
+              href="/"
               className=" hover:text-glowinglime ms-4 hover:text-shadow-glow"
             >
               Home
