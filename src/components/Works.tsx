@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -13,6 +13,7 @@ const Works = () => {
     };
     images: string[]; // Array of string image URLs
   }
+
   const projects: Project[] = [
     {
       title: "Project 1",
@@ -23,9 +24,9 @@ const Works = () => {
         demo: "https://project1.com",
       },
       images: [
-        "https://i.ibb.co.com/tzZGCYh/gamespace.png",
-        "https://i.ibb.co.com/L6Gb9g7/donation.png",
-        "https://i.ibb.co.com/tzZGCYh/gamespace.png",
+        "https://i.ibb.co/tzZGCYh/gamespace.png",
+        "https://i.ibb.co/L6Gb9g7/donation.png",
+        "https://i.ibb.co/tzZGCYh/gamespace.png",
       ],
     },
     {
@@ -37,9 +38,9 @@ const Works = () => {
         demo: "https://project2.com",
       },
       images: [
-        "https://i.ibb.co.com/L6Gb9g7/donation.png",
-        "https://i.ibb.co.com/tzZGCYh/gamespace.png",
-        "https://i.ibb.co.com/L6Gb9g7/donation.png",
+        "https://i.ibb.co/L6Gb9g7/donation.png",
+        "https://i.ibb.co/tzZGCYh/gamespace.png",
+        "https://i.ibb.co/L6Gb9g7/donation.png",
       ],
     },
     {
@@ -50,16 +51,33 @@ const Works = () => {
         demo: "https://project3.com",
       },
       images: [
-        "https://i.ibb.co.com/tzZGCYh/gamespace.png",
-        "https://i.ibb.co.com/L6Gb9g7/donation.png",
-        "https://i.ibb.co.com/tzZGCYh/gamespace.png",
-        "https://i.ibb.co.com/L6Gb9g7/donation.png",
+        "https://i.ibb.co/tzZGCYh/gamespace.png",
+        "https://i.ibb.co/L6Gb9g7/donation.png",
+        "https://i.ibb.co/tzZGCYh/gamespace.png",
       ],
     },
   ];
 
-  // Code for loading carousel
+  // Carousel State
   const [currentIndices, setCurrentIndices] = useState(projects.map(() => 0));
+
+  // Detect screen size to conditionally render one or multiple images
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust for mobile screen (<= 768px)
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener to track window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNext = (index: number) => {
     setCurrentIndices((prevIndices) =>
@@ -92,7 +110,7 @@ const Works = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="flex flex-col lg:flex-row  items-center  gap-10"
+            className="flex flex-col lg:flex-row items-center lg:items-start gap-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -128,11 +146,26 @@ const Works = () => {
             {/* Right column for images */}
             <div className="lg:w-1/2 relative">
               <div className="carousel-container">
-                <div className="project-carousel">
-                  <h3 className="project-title">{project.title}</h3>
-                  <div className="carousel-content">
-                    <div className="carousel-slide-container">
-                      {project.images.map((image, imageIndex) => (
+                <h3 className="project-title">{project.title}</h3>
+                <div className="carousel-content">
+                  <div className="carousel-slide-container flex space-x-4">
+                    {/* Conditionally render images based on screen size */}
+                    {isMobile ? (
+                      <div className={`carousel-slide center`}>
+                        <Image
+                          src={project.images[currentIndices[index]]}
+                          alt={project.title}
+                          className="carousel-img"
+                          width={300}
+                          height={300}
+                          onClick={() =>
+                            console.log("Open modal for full screen")
+                          }
+                        />
+                      </div>
+                    ) : (
+                      // Show all images side-by-side on larger screens
+                      project.images.map((image, imageIndex) => (
                         <div
                           key={imageIndex}
                           className={`carousel-slide ${
@@ -162,55 +195,106 @@ const Works = () => {
                             }
                           />
                         </div>
-                      ))}
-                    </div>
-
-                    {/* Carousel Control Buttons */}
-                    <button
-                      className="carousel-button prev"
-                      onClick={() => handlePrev(index)}
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 12h14M5 12l4-4m-4 4 4 4"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      className="carousel-button next"
-                      onClick={() => handleNext(index)}
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 12H5m14 0-4 4m4-4-4-4"
-                        />
-                      </svg>
-                    </button>
+                      ))
+                    )}
                   </div>
+
+                  {/* Carousel Control Buttons (only needed in mobile view) */}
+                  {isMobile ? (
+                    <>
+                      <button
+                        className="carousel-button prev"
+                        onClick={() => handlePrev(index)}
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M5 12h14M5 12l4-4m-4 4 4 4"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="carousel-button next"
+                        onClick={() => handleNext(index)}
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 12H5m14 0-4 4m4-4-4-4"
+                          />
+                        </svg>
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        className="carousel-button prev"
+                        onClick={() => handlePrev(index)}
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M5 12h14M5 12l4-4m-4 4 4 4"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        className="carousel-button next"
+                        onClick={() => handleNext(index)}
+                      >
+                        <svg
+                          className="w-6 h-6"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 12H5m14 0-4 4m4-4-4-4"
+                          />
+                        </svg>
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
