@@ -359,9 +359,9 @@ export const Skills = () => {
 
   return (
     <section id="skills" className="py-36">
-      <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold">
+      {/* <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold">
         Skills
-      </h2>
+      </h2> */}
 
       {/* <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen pb-16">  */}
       <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen">
@@ -412,8 +412,8 @@ export const Skills = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h3 className="text-4xl font-bold text-glowinglime mb-6">
-                  Overall Skills Summary
+                <h3 className="text-4xl font-bold text-white mb-6">
+                  My Skills
                 </h3>
                 <p className="text-lg text-gray-300 mb-8">
                   I am a full-stack developer with expertise in several

@@ -16,6 +16,7 @@ const AboutMe = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h2 className="text-4xl font-bold  text-shadow-glow">About Me</h2>
+          <hr className="border-glowinglime w-2/12" />
           <p className="text-lg text-gray-300 leading-relaxed">
             <ul>
               <li>

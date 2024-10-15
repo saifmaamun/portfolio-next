@@ -58,8 +58,110 @@ body {
 }
 
 .service-card:hover p {
-  
   color: #1f2937;
-  
+}
 
+
+
+
+/* carousel */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  width: 100%;
+}
+
+.project-carousel {
+  margin-bottom: 50px;
+}
+
+.carousel-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.carousel-slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 0;
+  width: 300px;
+  height: 300px;
+  will-change: transform, opacity;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide.center {
+  transform: translateZ(100px) scale(1.1);
+  opacity: 1;
+}
+
+.carousel-slide.left {
+  transform: translateX(-120%) rotateY(30deg);
+  opacity: 0.5;
+}
+
+.carousel-slide.right {
+  transform: translateX(120%) rotateY(-30deg);
+  opacity: 0.5;
+}
+
+.carousel-button {
+  position: absolute;
+  bottom: 20px;
+  /* Position the buttons at the bottom */
+  transform: translateY(0);
+  /* Remove the vertical centering */
+  padding: 10px 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.carousel-button.prev {
+
+  left: -50px;
+  /* Shifted the button to the left to separate from the content */
+}
+
+.carousel-button.next {
+  right: -50px;
+  /* Shifted the button to the right to separate from the content */
+}
+
+.carousel-slide.center:hover img {
+  transform: scale(1.15);
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

@@ -93,9 +93,6 @@ const Contact: React.FC = () => {
     //   </div>
     // </section>
     <section id="contact" className="py-16" data-aos="fade-up">
-      <h2 className="text-left text-4xl text-white text-shadow-glow mb-12 font-bold relative z-10">
-        Contact
-      </h2>
       <div className="py-16 relative bg-gray-900 rounded-2xl overflow-hidden">
         {/* Background gradient circles */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-tl from-glowinglime to-transparent opacity-30 rounded-full pointer-events-none"></div>
@@ -114,7 +111,7 @@ const Contact: React.FC = () => {
           </div>
           {/* FORM */}
           <div className="w-full lg:w-1/2 p-4 order-2 lg:order-1">
-            <h3 className="text-4xl font-bold mb-6 text-glowinglime text-shadow-glow text-center">
+            <h3 className="text-4xl font-bold mb-6 text-white text-shadow-glow text-start">
               Reach Me Out
             </h3>
             <p className="text-lg text-gray-300 text-center mb-10">

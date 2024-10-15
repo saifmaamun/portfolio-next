@@ -7,7 +7,10 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row  items-center text-white  justify-between  py-36">
+    <section
+      id="hero"
+      className="flex flex-col md:flex-row  items-center text-white  justify-between  py-36"
+    >
       {/* Left content */}
       <div className="md:w-1/2 p-2 ">
         <motion.h1

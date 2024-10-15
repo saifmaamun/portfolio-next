@@ -35,10 +35,10 @@ const experiences: ExperienceItem[] = [
 const Experiences: React.FC = () => {
   return (
     <section id="experiences" className="py-36">
-      <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold mb-12">
+      <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold mb-6">
         Experience
       </h2>
-
+      <hr className="border-glowinglime w-2/12" />
       <div className="relative border-l border-gray-600 max-w-3xl mx-auto">
         {experiences.map((experience, index) => (
           <motion.div

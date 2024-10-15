@@ -31,11 +31,8 @@ const servicesData = [
 const Services = () => {
   return (
     <section id="services" className="py-36" data-aos="fade-up">
-      <h2 className="text-left text-4xl text-white text-shadow-glow mb-4 font-bold">
-        Services
-      </h2>
       <div className="services-section py-16 bg-gray-900 rounded-2xl text-white">
-        <h2 className="text-4xl font-bold text-center mb-8 text-glowinglime">
+        <h2 className="text-4xl font-bold text-center mb-8 text-white">
           What I Offer
         </h2>
         <p className="text-lg text-center text-gray-300 mb-8">
