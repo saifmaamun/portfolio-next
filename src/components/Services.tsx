@@ -31,11 +31,12 @@ const servicesData = [
 const Services = () => {
   return (
     <section id="services" className="py-36" data-aos="fade-up">
-      <div className="services-section py-16 bg-gray-900 rounded-2xl text-white">
-        <h2 className="text-4xl font-bold text-center mb-8 text-white">
+      <div className="services-section p-16  text-white">
+        <h2 className="text-4xl font-bold text-start mb-8 text-white">
           What I Offer
         </h2>
-        <p className="text-lg text-center text-gray-300 mb-8">
+        <hr className="border-glowinglime w-2/12 my-8" />
+        <p className="text-lg text-start text-gray-300 mb-8">
           As a web developer, I offer a range of services to build, maintain,
           and scale web applications. Here&apos;s what you can expect when
           working with me.

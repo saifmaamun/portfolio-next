@@ -102,11 +102,10 @@ const Works = () => {
   };
 
   return (
-    <section id="work" className="py-16 bg-black">
-      <h2 className="text-4xl text-glowinglime font-bold text-center mb-12">
-        My Projects
-      </h2>
-      <div className="space-y-16">
+    <section id="work" className="p-16 bg-black">
+      <h2 className="text-4xl text-white font-bold text-start ">My Projects</h2>
+      <hr className="border-glowinglime w-2/12 my-8" />
+      <div className="space-y-16 py-10">
         {projects.map((project, index) => (
           <motion.div
             key={index}
