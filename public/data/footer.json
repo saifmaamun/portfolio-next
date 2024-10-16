@@ -1,0 +1,30 @@
+{
+  "contact": [
+    {
+      "icon": "FaPhoneAlt",
+      "info": "saifmaamun@gmail.com"
+    },
+    {
+      "icon": "FaEnvelope",
+      "info": "+880 130 579 7595"
+    },
+    {
+      "icon": "FaEnvelope",
+      "info": "+880 130 579 7595"
+    }
+  ],
+  "social": [
+    {
+      "icon": "FaTwitter",
+      "handle": "@exampleTwitter"
+    },
+    {
+      "icon": "FaGithub",
+      "handle": "github.com/example"
+    },
+    {
+      "icon": "FaLinkedin",
+      "handle": "linkedin.com/in/example"
+    }
+  ]
+}

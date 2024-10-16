@@ -130,7 +130,7 @@ const Navbar: React.FC = () => {
                 to="work"
                 className="hover:text-glowinglime hover:text-shadow-glow"
               >
-                Works
+                Projects
               </Link>
             </li>
             <li
