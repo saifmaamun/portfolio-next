@@ -1,68 +1,25 @@
+"use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { usePortfolio } from "@/app/context/PortfolioContext";
 
 const Works = () => {
-  // Sample project data
-  interface Project {
-    title: string;
-    description: string;
-    links: {
-      github: string;
-      demo: string;
-    };
-    images: string[]; // Array of string image URLs
-  }
+  // Fetching data from context
+  const { projects } = usePortfolio();
 
-  const projects: Project[] = [
-    {
-      title: "Project 1",
-      description:
-        "An overview of Project 1 with its features and functionalities.",
-      links: {
-        github: "https://github.com/user/project1",
-        demo: "https://project1.com",
-      },
-      images: [
-        "https://i.ibb.co/tzZGCYh/gamespace.png",
-        "https://i.ibb.co/L6Gb9g7/donation.png",
-        "https://i.ibb.co/tzZGCYh/gamespace.png",
-      ],
-    },
-    {
-      title: "Project 2",
-      description:
-        "An overview of Project 2, showcasing its unique functionalities.",
-      links: {
-        github: "https://github.com/user/project2",
-        demo: "https://project2.com",
-      },
-      images: [
-        "https://i.ibb.co/L6Gb9g7/donation.png",
-        "https://i.ibb.co/tzZGCYh/gamespace.png",
-        "https://i.ibb.co/L6Gb9g7/donation.png",
-      ],
-    },
-    {
-      title: "Project 3",
-      description: "A detailed overview of Project 3 and its features.",
-      links: {
-        github: "https://github.com/user/project3",
-        demo: "https://project3.com",
-      },
-      images: [
-        "https://i.ibb.co/tzZGCYh/gamespace.png",
-        "https://i.ibb.co/L6Gb9g7/donation.png",
-        "https://i.ibb.co/tzZGCYh/gamespace.png",
-      ],
-    },
-  ];
-
-  // Carousel State
-  const [currentIndices, setCurrentIndices] = useState(projects.map(() => 0));
+  // Initialize currentIndices as an empty array
+  const [currentIndices, setCurrentIndices] = useState<number[]>([]);
 
   // Detect screen size to conditionally render one or multiple images
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Set initial indices when projects are available
+    if (projects && projects.length > 0) {
+      setCurrentIndices(projects.map(() => 0)); // Initialize to zero for each project
+    }
+  }, [projects]); // This effect runs when `projects` changes
 
   useEffect(() => {
     const handleResize = () => {
@@ -80,33 +37,42 @@ const Works = () => {
   }, []);
 
   const handleNext = (index: number) => {
-    setCurrentIndices((prevIndices) =>
-      prevIndices.map((currentIndex, i) =>
-        i === index
-          ? (currentIndex + 1) % projects[index].images.length
-          : currentIndex
-      )
-    );
+    if (projects) {
+      setCurrentIndices((prevIndices) =>
+        prevIndices.map((currentIndex, i) =>
+          i === index
+            ? (currentIndex + 1) % projects[index].images.length
+            : currentIndex
+        )
+      );
+    }
   };
 
   const handlePrev = (index: number) => {
-    setCurrentIndices((prevIndices) =>
-      prevIndices.map((currentIndex, i) =>
-        i === index
-          ? currentIndex === 0
-            ? projects[index].images.length - 1
-            : currentIndex - 1
-          : currentIndex
-      )
-    );
+    if (projects) {
+      setCurrentIndices((prevIndices) =>
+        prevIndices.map((currentIndex, i) =>
+          i === index
+            ? currentIndex === 0
+              ? projects[index].images.length - 1
+              : currentIndex - 1
+            : currentIndex
+        )
+      );
+    }
   };
+
+  if (!projects) {
+    // Display loading or fallback UI if projects are not available
+    return <div>Loading...</div>;
+  }
 
   return (
     <section id="work" className="p-16 bg-black">
       <h2 className="text-4xl text-white font-bold text-start ">My Projects</h2>
       <hr className="border-glowinglime w-2/12 my-8" />
       <div className="space-y-16 py-10">
-        {projects.map((project, index) => (
+        {projects?.map((project, index) => (
           <motion.div
             key={index}
             className="flex flex-col lg:flex-row items-center lg:items-start gap-10"
@@ -152,7 +118,7 @@ const Works = () => {
                     {isMobile ? (
                       <div className={`carousel-slide center`}>
                         <Image
-                          src={project.images[currentIndices[index]]}
+                          src={project.images[currentIndices![index]]}
                           alt={project.title}
                           className="carousel-img"
                           width={300}
@@ -168,16 +134,16 @@ const Works = () => {
                         <div
                           key={imageIndex}
                           className={`carousel-slide ${
-                            imageIndex === currentIndices[index]
+                            imageIndex === currentIndices![index]
                               ? "center"
                               : imageIndex ===
-                                (currentIndices[index] -
+                                (currentIndices![index] -
                                   1 +
                                   project.images.length) %
                                   project.images.length
                               ? "left"
                               : imageIndex ===
-                                (currentIndices[index] + 1) %
+                                (currentIndices![index] + 1) %
                                   project.images.length
                               ? "right"
                               : ""

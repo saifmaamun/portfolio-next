@@ -53,11 +53,11 @@ const Contact: React.FC = () => {
               height="550"
               src={avatar}
               alt="email avatar"
-              className="rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-tl from-glowinglime to-transparent opacity-30"
+              className="rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-tl from-glowinglime to-transparent opacity-80"
             />
           </div>
           {/* FORM */}
-          <div className="w-full lg:w-1/2 order-2 lg:order-1">
+          <div className="w-full lg:w-1/2 lg:p-0  p-4 order-2 lg:order-1">
             <h2 className="text-4xl  font-bold  text-shadow-glow">
               Reach me out
             </h2>

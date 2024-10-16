@@ -15,11 +15,7 @@ import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, i
 import ParticlesBackground from "@/components/ParticlesBackground";
 import AboutMe from "@/components/AboutMe";
 
-// import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-
-// particles
-
-export default function Home() {
+export default function Page() {
   // particles
   const [init, setInit] = useState(false);
 

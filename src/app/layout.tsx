@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import { PortfolioProvider } from "@/app/context/PortfolioContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description: "Everything You need to know about Saif Maamun",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -41,7 +42,7 @@ export default function RootLayout({
         <Navbar />
         <div className="min-h-screen flex flex-col justify-between">
           <main className="relative z-10 container mx-auto px-4 flex-grow">
-            {children}
+            <PortfolioProvider>{children}</PortfolioProvider>
           </main>
           <Footer />
         </div>

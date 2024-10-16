@@ -362,7 +362,29 @@ export const Skills = () => {
       <div className="p-16">
         <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen">
           {/* Left Side -  Skill info*/}
-          <div className="skill-info w-full md:w-1/2   text-center md:text-left">
+          <div className="relative w-full md:w-1/2 h-96 order-1 md:order-2 flex justify-center items-center">
+            <div className="floating-icons relative w-[400px] h-[400px]">
+              {skillsData.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  className="absolute skill-icon"
+                  style={{
+                    top: skill.position.top,
+                    left: skill.position.left,
+                  }}
+                  whileHover={{ scale: 1.3, rotate: 360 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  onHoverStart={() => setSelectedSkill(skill)}
+                  onHoverEnd={() => setSelectedSkill(null)}
+                >
+                  {skill.icon}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side - Skill icons */}
+          <div className="skill-info w-full md:w-1/2 order-2 md:order-1  text-center md:text-left">
             {/* If hovering over a skill, show its info; else show default */}
             {selectedSkill ? (
               <motion.div
@@ -457,28 +479,6 @@ export const Skills = () => {
                 </motion.div>
               </>
             )}
-          </div>
-
-          {/* Right Side - Skill icons */}
-          <div className="relative w-full md:w-1/2 h-96 flex justify-center items-center">
-            <div className="floating-icons relative w-[400px] h-[400px]">
-              {skillsData.map((skill) => (
-                <motion.div
-                  key={skill.name}
-                  className="absolute skill-icon"
-                  style={{
-                    top: skill.position.top,
-                    left: skill.position.left,
-                  }}
-                  whileHover={{ scale: 1.3, rotate: 360 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  onHoverStart={() => setSelectedSkill(skill)}
-                  onHoverEnd={() => setSelectedSkill(null)}
-                >
-                  {skill.icon}
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
