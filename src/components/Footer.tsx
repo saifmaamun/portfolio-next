@@ -1,65 +1,9 @@
 "use client";
 import Image from "next/image";
-import mail from "../assets/gmail-svgrepo-com.svg";
-import phone from "../assets/phone-svgrepo-com.svg";
-import whatsapp from "../assets/whatsapp-svgrepo-com.svg";
-import address from "../assets/location-svgrepo-com.svg";
-import git from "../assets/github-svgrepo-com.svg";
-import linkedin from "../assets/linkedin-svgrepo-com.svg";
-import insta from "../assets/instagram-1-svgrepo-com.svg";
-import fb from "../assets/facebook-media-network-svgrepo-com.svg";
-import x from "../assets/x.svg";
+
+import { contacts, socials } from "@/infoSet/footer";
 
 const Footer: React.FC = () => {
-  const socials = [
-    {
-      icon: git,
-      handle: "@saifmaamun",
-      href: "https://github.com/saifmaamun",
-    },
-    {
-      icon: linkedin,
-      handle: "@saifmaamun",
-      href: "https://github.com/saifmaamun",
-    },
-    {
-      icon: insta,
-      handle: "@saifmaamun",
-      href: "https://github.com/saifmaamun",
-    },
-    {
-      icon: fb,
-      handle: "@saifmaamun",
-      href: "https://github.com/saifmaamun",
-    },
-    {
-      icon: x,
-      handle: "@saifmaamun",
-      href: "https://github.com/saifmaamun",
-    },
-  ];
-  const contacts = [
-    {
-      src: mail,
-      value: "saifmaamun@gmail.com",
-      href: "mailto:saifmaamun@gmail.com",
-    },
-    {
-      src: phone,
-      value: "+8801305797595",
-      href: "tel:+8801305797595",
-    },
-    {
-      src: whatsapp,
-      value: "+8801305797595",
-      href: "tel:+8801305797595",
-    },
-    {
-      src: address,
-      value: "Siddhirgonj, Narayangonj, Dhaka,Bangladesh",
-      href: "",
-    },
-  ];
   return (
     <footer className="bg-gray-900 text-white py-8 px-4">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -147,22 +91,24 @@ const Footer: React.FC = () => {
           <hr className="border-glowinglime" />
           <div className="flex-col space-y-2 align-middle it">
             {socials.map((social) => (
-              <a
-                key={social.handle}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-4 hover:text-glowinglime transition-all duration-300"
-              >
-                <Image
-                  src={social.icon}
-                  className=""
-                  alt="My SVG Icon"
-                  width={40}
-                  height={40}
-                />
-                <p>{social.handle}</p>
-              </a>
+              <>
+                <a
+                  key={social.handle}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 hover:text-glowinglime transition-all duration-300"
+                >
+                  <Image
+                    src={social.icon}
+                    className=""
+                    alt="My SVG Icon"
+                    width={40}
+                    height={40}
+                  />
+                  <p>{social.handle}</p>
+                </a>
+              </>
             ))}
           </div>
         </div>

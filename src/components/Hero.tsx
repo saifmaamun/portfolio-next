@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
@@ -54,10 +53,10 @@ const Hero: React.FC = () => {
         </motion.p>
         <motion.button>
           <Link
-            href="#contact"
+            href="/resume.pdf"
             className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300"
           >
-            Hire me
+            Resume
           </Link>
         </motion.button>
       </div>

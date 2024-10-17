@@ -32,8 +32,6 @@ const AboutMe = () => {
                 I thrive in fast-paced environments, always learning new
                 technologies and pushing the boundaries of web development.
               </li>
-              <li></li>
-              <li></li>
             </ul>
           </p>
           <p className="text-lg text-gray-300 leading-relaxed">

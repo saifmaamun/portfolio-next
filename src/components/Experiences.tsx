@@ -1,36 +1,8 @@
 "use client";
+import { experiences } from "@/infoSet/experience";
 import { motion } from "framer-motion";
-
-interface ExperienceItem {
-  year: string;
-  title: string;
-  company: string;
-  duration: string;
-  servedTime: string;
-  description: string;
-}
-
-const experiences: ExperienceItem[] = [
-  {
-    year: "2024",
-    title: "Senior Web Developer",
-    company: "Microsoft Corporation",
-    duration: "2022-2024",
-    servedTime: "2 years",
-    description:
-      "Worked on advanced MERN stack projects and deployed scalable applications.",
-  },
-  {
-    year: "2023",
-    title: "Full-Stack Developer",
-    company: "Meteor Inc",
-    duration: "2018-2022",
-    servedTime: "2 years",
-    description:
-      "Developed web applications with Next.js, Node.js, and MongoDB.",
-  },
-  // Add more experiences as needed
-];
+import bulletPoint from "../assets/ar-svgrepo-com.svg";
+import Image from "next/image";
 
 const Experiences: React.FC = () => {
   return (
@@ -63,7 +35,22 @@ const Experiences: React.FC = () => {
                 <span className="block text-sm text-gray-400">
                   {experience.servedTime}
                 </span>
-                <p className="mt-2 text-gray-300">{experience.description}</p>
+                {experience.description.map((activity) => (
+                  <div
+                    key={activity}
+                    className="flex justify-start items-center space-x-4 my-2 py-2"
+                  >
+                    <Image
+                      src={bulletPoint}
+                      className=""
+                      alt="arrow"
+                      width={30}
+                      height={30}
+                    />
+
+                    <p className="mt-2 text-gray-300 ">{activity}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}
