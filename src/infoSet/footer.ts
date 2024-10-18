@@ -15,23 +15,23 @@ export const socials = [
   },
   {
     icon: linkedin,
-    handle: "@saifmaamun",
-    href: "https://github.com/saifmaamun",
+    handle: "@saif-maamun",
+    href: "https://www.linkedin.com/in/saif-maamun",
   },
   {
     icon: insta,
-    handle: "@saifmaamun",
-    href: "https://github.com/saifmaamun",
+    handle: "@desprdo",
+    href: "https://www.instagram.com/desprdo",
   },
   {
     icon: fb,
-    handle: "@saifmaamun",
-    href: "https://github.com/saifmaamun",
+    handle: "@maamunsaif",
+    href: "https://www.facebook.com/maamunsaif",
   },
   {
     icon: x,
-    handle: "@saifmaamun",
-    href: "https://github.com/saifmaamun",
+    handle: "@saif_maamun",
+    href: "https://x.com/saif_maamun",
   },
 ];
 export const contacts = [

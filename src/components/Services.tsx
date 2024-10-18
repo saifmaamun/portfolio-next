@@ -31,7 +31,7 @@ const servicesData = [
 const Services = () => {
   return (
     <section id="services" className="py-36" data-aos="fade-up">
-      <div className="services-section p-16  text-white">
+      <div className="services-section p-4 md:p-16  text-white">
         <h2 className="text-4xl font-bold text-start mb-8 text-white">
           What I Offer
         </h2>

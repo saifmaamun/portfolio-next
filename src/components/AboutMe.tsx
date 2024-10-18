@@ -8,7 +8,7 @@ import Link from "next/link";
 const AboutMe = () => {
   return (
     <section id="about" className=" py-16">
-      <div className="grid grid-cols-1  p-16  gap-8">
+      <div className="grid grid-cols-1 p-4 md:p-16  gap-8">
         {/* Left Column - About Me Content */}
         <motion.div
           className="flex flex-col justify-center space-y-6"

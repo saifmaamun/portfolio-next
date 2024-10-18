@@ -22,7 +22,7 @@ export const Skills = () => {
 
   return (
     <section id="skills" className="py-36">
-      <div className="p-16">
+      <div className="p-4 md:p-16">
         <div className="skills-section flex flex-col md:flex-row items-center justify-center md:justify-between lg:min-h-screen md:min-h-screen">
           {/* Left Side -  Skill info*/}
           <div className="relative w-full md:w-1/2 h-96 order-1 md:order-2 flex justify-center items-center">
@@ -91,7 +91,7 @@ export const Skills = () => {
                 </motion.div>
 
                 {/* Buttons for different sections */}
-                <div className="relative mb-6 flex justify-center md:justify-start gap-8">
+                <div className="relative mb-6 flex justify-center md:justify-start gap-3">
                   {sections.map((section) => (
                     <motion.button
                       key={section}

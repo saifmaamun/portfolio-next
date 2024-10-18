@@ -6,7 +6,7 @@ import { contacts, socials } from "@/infoSet/footer";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-8 px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 p-4 gap-8">
         {/* Contact Information */}
         <div className="space-y-4">
           <h4 className="text-2xl font-bold text-white">Get In Touch</h4>

@@ -68,7 +68,7 @@ const Works = () => {
   }
 
   return (
-    <section id="work" className="p-16 bg-black">
+    <section id="work" className="p-4 md:p-16 bg-black">
       <h2 className="text-4xl text-white font-bold text-start ">My Projects</h2>
       <hr className="border-glowinglime w-2/12 my-8" />
       <div className="space-y-16 py-10">
@@ -81,11 +81,13 @@ const Works = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Left column for content */}
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 ">
               <h3 className="text-3xl font-semibold text-white mb-4">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-6">{project.description}</p>
+              <div className="text-gray-300 mb-6  md:pe-32">
+                <p className="text-gray-300 ">{project.description}</p>
+              </div>
 
               {/* Project Links */}
               <div className="flex space-x-4 mb-6">

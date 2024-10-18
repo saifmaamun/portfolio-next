@@ -7,7 +7,7 @@ import Image from "next/image";
 const Experiences: React.FC = () => {
   return (
     <section id="experiences" className="py-36">
-      <div className="  p-16">
+      <div className="p-4  md:p-16">
         <h2 className="text-left text-4xl text-glowinglimetext-shadow-glow font-bold mb-6">
           Experience
         </h2>
