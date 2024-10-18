@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import resumeIcon from "../assets/reapp-svgrepo-com.svg";
 
 const Hero: React.FC = () => {
   return (
@@ -52,12 +53,15 @@ const Hero: React.FC = () => {
           />
         </motion.p>
         <motion.button>
-          <Link
-            href="/resume.pdf"
-            className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300"
-          >
-            Resume
-          </Link>
+          <div className="flex justify-center space-x-1  items-center font-bold  text-white shadow-glow hover:bg-white hover:text-black rounded-full py-3 px-4  transition duration-300">
+            <Image src={resumeIcon} width={20} height={20} alt="resume svg" />
+            <Link
+              href="https://drive.google.com/file/d/1u_-U1Iy-dMqy8n936y9MVX9DXH77PBk0/view"
+              className=" "
+            >
+              Resume
+            </Link>
+          </div>
         </motion.button>
       </div>
 

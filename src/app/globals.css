@@ -148,12 +148,12 @@ body {
 .carousel-button.prev {
 
   left: -50px;
-  /* Shifted the button to the left to separate from the content */
+
 }
 
 .carousel-button.next {
   right: -50px;
-  /* Shifted the button to the right to separate from the content */
+
 }
 
 .carousel-slide.center:hover img {

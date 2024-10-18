@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -17,27 +18,30 @@ const AboutMe = () => {
         >
           <h2 className="text-4xl font-bold  text-shadow-glow">About Me</h2>
           <hr className="border-glowinglime w-2/12" />
-          <p className="text-lg text-gray-300 leading-relaxed">
-            <ul>
+          <p className="text-lg text-gray-300 leading-relaxed space-y-4">
+            <ul className="space-y-4">
               <li>
-                I&apos;m a passionate web developer specializing in the MERN
-                stack with a love for crafting beautiful, user-friendly
-                interfaces.
+                Hi, I'm Saif, a passionate web developer and lifelong gamer from
+                Bangladesh. I find joy in solving complex coding challenges and
+                constantly pushing my limits to learn new technologies. Whether
+                it's building seamless web applications or leveling up in my
+                favorite game, my determination to succeed never wavers.
               </li>
               <li>
-                With hands-on experience in building dynamic applications, I
-                take pride in writing clean, scalable code.
+                As a MERN stack developer, I thrive on creating efficient,
+                scalable solutions, and I take pride in my attention to detail.
+                My love for gaming has taught me the importance of strategy,
+                patience, and persistence, all of which I apply in my coding
+                journey.
               </li>
               <li>
-                I thrive in fast-paced environments, always learning new
-                technologies and pushing the boundaries of web development.
+                Driven by curiosity and a desire to improve, I believe in
+                continuous growth, both professionally and personally. Whether
+                it's mastering a new framework or completing a difficult level
+                in a game, I am always ready to take on the challenge. Let's
+                build something amazing together!
               </li>
             </ul>
-          </p>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Over the years, I&apos;ve built everything from full-stack
-            applications to intuitive user experiences. My focus remains on
-            delivering high-quality solutions that solve real-world problems.
           </p>
         </motion.div>
 
@@ -46,17 +50,17 @@ const AboutMe = () => {
 
       {/* CTA Button */}
       <motion.div
-        className="text-center mt-12"
+        className="text-center mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         <motion.button>
           <Link
-            href="/resume.pdf"
+            href="#contact"
             className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300"
           >
-            Download Resume
+            Hire Me
           </Link>
         </motion.button>
       </motion.div>

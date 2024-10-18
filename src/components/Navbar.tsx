@@ -5,7 +5,6 @@ import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa"; // Add FaBars and FaTimes for the burger menu
 import Image from "next/image";
 import logo from "../assets/5logo.png";
-import resumeIcon from "../assets/reapp-svgrepo-com.svg";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,31 +84,6 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
             ))}
-
-            <li
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
-              <Link
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                to="/path-to-your-resume.pdf"
-                download
-                className="hidden md:flex items-center hover:text-black hover:shadow-glow hover:bg-glowinglime  rounded-full px-2  transition duration-300"
-              >
-                {/* <FaFileDownload className="mr-2" /> Resume */}
-                <Image
-                  src={resumeIcon}
-                  width={20}
-                  height={20}
-                  alt="resume svg"
-                  className="mx-1"
-                />
-                Resume
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
