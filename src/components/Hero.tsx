@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
           <div className="flex justify-center space-x-1  items-center font-bold  text-black bg-white hover:shadow-glow rounded-full py-3 px-4  transition duration-300">
             <Image src={resumeIcon} width={20} height={20} alt="resume svg" />
             <Link
-              href="https://drive.google.com/file/d/1u_-U1Iy-dMqy8n936y9MVX9DXH77PBk0/view"
+              href="https://drive.google.com/file/d/1u_-U1Iy-dMqy8n936y9MVX9DXH77PBk0/view?usp=sharing"
               className=" "
             >
               Resume
