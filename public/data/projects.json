@@ -49,12 +49,16 @@
   },
   {
     "title": "Power Vision",
-    "description": "A detailed overview of Project 3 and its features.",
+    "description": [
+      "A web app where user can explore, esll,buy various kinds of sunglasses.",
+"Custom Login Signin",
+"Custom maintain every state changed by user"
+   ],
     "links": {
       "live": "https://power-vision-live.vercel.app/",
-      "front": "https://github.com/user/project1",
-      "back": "https://github.com/user/project1",
-      "server": "https://github.com/user/project1"
+      "front": "https://github.com/saifmaamun/powervision-front",
+      "back": "https://github.com/saifmaamun/powervision-back",
+      "server": "https://redux-watch-shop.vercel.app/"
     },
     "images": [
 "https://i.ibb.co.com/SdJNsjC/power-all.png",
