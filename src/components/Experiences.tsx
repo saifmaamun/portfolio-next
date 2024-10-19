@@ -21,7 +21,7 @@ const Experiences: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="absolute w-4 h-4 bg-[#39ff14] rounded-full -left-2 border border-black"></div>
+              <div className="absolute w-4 h-4 bg-[#28f0b4] rounded-full -left-2 border border-black"></div>
               <div className="pl-6">
                 <h3 className="text-2xl font-semibold text-white">
                   {experience.title}

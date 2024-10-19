@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        glowinglime: "#c9532e",
+        glowinglime: "#28F0B4",
         // background: "var(--background)",
         // foreground: "var(--foreground)",
       },
       boxShadow: {
-        glow: "0 0 8px rgba(201, 83, 46, 0.8), 0 0 16px rgba(201, 83, 46, 0.5), 0 0 24px rgba(201, 83, 46, 0.3)",
+        glow: "0 0 8px rgba(40, 240, 180, 0.8), 0 0 16px rgba(40, 240, 180, 0.5), 0 0 24px rgba(40, 240, 180, 0.3)",
       },
       textShadow: {
-        glow: "0 0 5px rgba(201, 83, 46, 0.8), 0 0 10px rgba(201, 83, 46, 0.5), 0 0 15px rgba(201, 83, 46, 0.3)",
+        glow: "0 0 5px rgba(40, 240, 180, 0.8), 0 0 10px rgba(40, 240, 180, 0.5), 0 0 15px rgba(40, 240, 180, 0.3)",
       },
     },
   },

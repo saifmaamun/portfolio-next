@@ -47,7 +47,11 @@ const Navbar: React.FC = () => {
             duration={500}
             className="hover:text-glowinglime  ps-4"
           >
-            <Image src={logo} alt="logo" className="w-full h-16" />
+            <Image
+              src={logo}
+              alt="logo"
+              className="w-full bg-transparent h-16"
+            />
 
             {/* <h1 className="text-2xl font-bold text-glowinglime">Saif Maamun</h1> */}
           </Link>

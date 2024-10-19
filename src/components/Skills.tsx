@@ -101,7 +101,7 @@ export const Skills = () => {
                           : "text-gray-400"
                       } relative`}
                       onClick={() => setActiveSection(section as Section)}
-                      whileHover={{ color: "#c9532e" }}
+                      whileHover={{ color: "#28f0b4" }}
                     >
                       {section}
                       {/* Active Underline Indicator */}
@@ -113,7 +113,7 @@ export const Skills = () => {
                           animate={{
                             width: "100%",
                             height: 2,
-                            backgroundColor: "#c9532e",
+                            backgroundColor: "#28f0b4",
                           }}
                           transition={{ duration: 0.3 }}
                         />
