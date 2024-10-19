@@ -112,7 +112,7 @@ const Works = () => {
                   href={project.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
+                  className=" text-glowinglime px-4 py-2 font-bold border-b-2 border-white hover:border-glowinglime hover:text-shadow-glow hover:text-white transition"
                 >
                   Live
                 </a>
@@ -120,7 +120,7 @@ const Works = () => {
                   href={project.links.front}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
+                  className=" text-glowinglime px-4 py-2 font-bold border-b-2 border-white hover:border-glowinglime hover:text-shadow-glow hover:text-white transition"
                 >
                   FrontEnd
                 </a>
@@ -128,7 +128,7 @@ const Works = () => {
                   href={project.links.back}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
+                  className=" text-glowinglime px-4 py-2 font-bold border-b-2 border-white hover:border-glowinglime hover:text-shadow-glow hover:text-white transition"
                 >
                   BackEnd
                 </a>

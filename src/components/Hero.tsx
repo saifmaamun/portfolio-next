@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           />
         </motion.p>
         <motion.button>
-          <div className="flex justify-center space-x-1  items-center font-bold  text-white shadow-glow hover:bg-white hover:text-black rounded-full py-3 px-4  transition duration-300">
+          <div className="flex justify-center space-x-1  items-center font-bold  text-black bg-white hover:shadow-glow rounded-full py-3 px-4  transition duration-300">
             <Image src={resumeIcon} width={20} height={20} alt="resume svg" />
             <Link
               href="https://drive.google.com/file/d/1u_-U1Iy-dMqy8n936y9MVX9DXH77PBk0/view"
@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
             alt="Saif Maamun"
             width={400}
             height={400}
-            className="rounded-full  bg-glowinglime border-glowinglime   border-4 shadow-glow bg-opacity-20 object-cover"
+            className="rounded-b-full bg-opacity-20 object-cover"
           />
           {/* Background shapes */}
 
@@ -92,16 +92,6 @@ const Hero: React.FC = () => {
             style={{ top: "30%", left: "13%" }}
             transition={{ duration: 2, repeat: Infinity }}
           />
-          {/* <motion.div
-            className="absolute -z-10 w-64 h-64 sm:w-64 sm:h-64 bg-glowinglime  rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
-            style={{ top: "50%", left: "15%" }}
-            transition={{ duration: 2, repeat: Infinity }}
-          /> */}
-          {/* <motion.div
-            className="absolute -z-10 w-64 h-64 sm:w-64 sm:h-64 bg-glowinglime  rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
-            style={{ top: "70%", left: "10%" }}
-            transition={{ duration: 2, repeat: Infinity }}
-          /> */}
         </div>
       </motion.div>
     </section>

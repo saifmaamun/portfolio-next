@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className=" hover:text-glowinglime ms-4 hover:text-shadow-glow"
+                  className=" hover:text-glowinglime ms-4 font-semibold hover:text-shadow-glow"
                 >
                   {menu.value}
                 </Link>

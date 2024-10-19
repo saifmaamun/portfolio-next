@@ -59,7 +59,7 @@ const AboutMe = () => {
         <motion.button>
           <Link
             href="#contact"
-            className=" md:flex items-center font-bold hover:text-white text-black shadow-glow hover:bg-black bg-glowinglime  rounded-full py-2 px-4  transition duration-300"
+            className=" md:flex items-center font-bold  text-black bg-white hover:shadow-glow  rounded-full py-2 px-4  transition duration-300"
           >
             Hire Me
           </Link>
