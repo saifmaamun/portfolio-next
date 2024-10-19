@@ -25,8 +25,10 @@ export interface Project {
   title: string;
   description: string;
   links: {
-    github: string;
-    demo: string;
+    live: string;
+    front: string;
+    back: string;
+    server: string;
   };
   images: string[]; // Array of string image URLs
 }

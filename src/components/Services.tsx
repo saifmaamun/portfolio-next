@@ -47,9 +47,13 @@ const Services = () => {
             <motion.div
               key={service.title}
               className="service-card relative p-6 rounded-lg bg-gray-800 shadow-lg w-80 cursor-pointer transform transition-all duration-500"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.6,
+              }}
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-semibold mb-4 text-white">

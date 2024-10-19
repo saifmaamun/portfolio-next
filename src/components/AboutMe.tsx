@@ -11,10 +11,11 @@ const AboutMe = () => {
       <div className="grid grid-cols-1 p-4 md:p-16  gap-8">
         {/* Left Column - About Me Content */}
         <motion.div
-          className="flex flex-col justify-center space-y-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="flex flex-col justify-center space-y-6 transform transition-all duration-500"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold  text-shadow-glow">About Me</h2>
           <hr className="border-glowinglime w-2/12" />

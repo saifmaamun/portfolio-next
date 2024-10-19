@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePortfolio } from "@/app/context/PortfolioContext";
+import bulletIcon from "../assets/target-aim-svgrepo-com.svg";
 
 const Works = () => {
   // Fetching data from context
@@ -71,7 +72,7 @@ const Works = () => {
     <section id="work" className="p-4 md:p-16 bg-black">
       <h2 className="text-4xl text-white font-bold text-start ">My Projects</h2>
       <hr className="border-glowinglime w-2/12 my-8" />
-      <div className="space-y-16 py-10">
+      <div className="space-y-16 ">
         {projects?.map((project, index) => (
           <motion.div
             key={index}
@@ -86,26 +87,50 @@ const Works = () => {
                 {project.title}
               </h3>
               <div className="text-gray-300 mb-6  md:pe-32">
-                <p className="text-gray-300 ">{project.description}</p>
+                <ul>
+                  {Array.isArray(project.description) ? (
+                    project.description.map((item, index) => (
+                      <div key={index} className="flex space-x-4 space-y-4">
+                        <Image
+                          src={bulletIcon}
+                          width={30}
+                          height={30}
+                          alt="bullet point"
+                        />
+                        <li className="text-gray-300">{item}</li>
+                      </div>
+                    ))
+                  ) : (
+                    <li className="text-gray-300">{project.description}</li>
+                  )}
+                </ul>
               </div>
 
               {/* Project Links */}
               <div className="flex space-x-4 mb-6">
                 <a
-                  href={project.links.github}
+                  href={project.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
                 >
-                  GitHub
+                  Live
                 </a>
                 <a
-                  href={project.links.demo}
+                  href={project.links.front}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
                 >
-                  Live Demo
+                  FrontEnd
+                </a>
+                <a
+                  href={project.links.back}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-glowinglime text-black px-4 py-2 rounded hover:shadow-glow transition"
+                >
+                  BackEnd
                 </a>
               </div>
             </div>
@@ -215,7 +240,7 @@ const Works = () => {
                       </button>
                     </>
                   ) : (
-                    <>
+                    <div className="flex justify-center items-center relative">
                       <button
                         className="carousel-button prev"
                         onClick={() => handlePrev(index)}
@@ -260,7 +285,7 @@ const Works = () => {
                           />
                         </svg>
                       </button>
-                    </>
+                    </div>
                   )}
                 </div>
               </div>
