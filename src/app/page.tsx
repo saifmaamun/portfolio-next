@@ -16,34 +16,42 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import AboutMe from "@/components/AboutMe";
 
 export default function Page() {
-  // particles
-  const [init, setInit] = useState(false);
+	// particles
+	const [init, setInit] = useState(false);
+	// const [init, setInit] = useState(false);
+	// const [init, setInit] = useState(false);
+	// const [init, setInit] = useState(false);
+	// const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadFull(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
+	// this should be run only once per application lifetime
+	useEffect(() => {
+		initParticlesEngine(async (engine) => {
+			await loadFull(engine);
+			//await loadBasic(engine);
+		}).then(() => {
+			setInit(true);
+		});
+	}, []);
 
-  if (init) {
-    return (
-      <>
-        <Hero />
-        <AboutMe />
-        <Experiences />
-        <Services />
-        <Skills />
-        <Works />
-        <Contact />
-        {/* <UniqueSection /> */}
-        <ParticlesBackground />
-      </>
-    );
-  }
+	if (init) {
+		return (
+			<>
+				<div className="relative z-[1000]">
+					<Hero />
+					<AboutMe />
+					<Experiences />
+					<Services />
+					<Skills />
+					<Works />
+					<Contact />
+				</div>
+				{/* <UniqueSection /> */}
+				<div className="relative -z-[1000]">
+					<ParticlesBackground />
+				</div>
+			</>
+		);
+	}
 
-  // particles
+	// particles
 }

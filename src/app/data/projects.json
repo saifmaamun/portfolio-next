@@ -1,6 +1,6 @@
 [
   {
-    "title": "Game Plan",
+    "title": "Game Plans",
     "description": ["Game Plan is designed to provide a user-friendly interface for booking sports facilities with interactive UX/UI",
 "User registration and authentication and separate User and Admin role and user Role Based Actions",
 "Facility booking with available time slots and viewing schedules for facilities with search functionality to filter facilities by name",
@@ -15,14 +15,7 @@
       "server": "https://github.com/user/project1"
     },
     "images": [
-      "https://i.ibb.co.com/GtJdpyT/game.png",
-      "https://i.ibb.co.com/yV4PyHG/game-facility.png",
-      "https://i.ibb.co.com/B3ty008/game-facility-details.png",
-      "https://i.ibb.co.com/b6CSdMH/game-booking.png",
-      "https://i.ibb.co.com/K2YrCkd/game-register.png" ,
-      "https://i.ibb.co.com/7V2rs14/game-dash.png",
-      "https://i.ibb.co.com/9ySgQMY/game-about.png" ,
-      "https://i.ibb.co.com/THvJN4h/game-contact.png"
+     
     ]
   },
   {

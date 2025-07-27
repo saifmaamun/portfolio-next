@@ -4,189 +4,187 @@
 
 /* Add any additional styles here */
 body {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
 
 .hover\:text-shadow-glow:hover {
-  text-shadow:
-    0 0 10px rgba(40, 240, 180, 0.8),
-    0 0 20px rgba(40, 240, 180, 0.6),
-    0 0 30px rgba(40, 240, 180, 0.4);
+	text-shadow: 0 0 10px rgba(40, 240, 180, 0.8),
+		0 0 20px rgba(40, 240, 180, 0.6), 0 0 30px rgba(40, 240, 180, 0.4);
 }
 .skills-section {
-  @apply flex flex-col lg:flex-row items-center justify-between;
+	@apply flex flex-col lg:flex-row items-center justify-between;
 }
 
 .floating-icons {
-  position: relative;
-  width: 400px;
-  height: 400px;
+	position: relative;
+	width: 400px;
+	height: 400px;
 }
 
 .skill-icon {
-  @apply absolute cursor-pointer transition-transform duration-500;
+	@apply absolute cursor-pointer transition-transform duration-500;
 }
 
 .skills-card {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
 }
 
 .skills-card:hover {
-  transform: translateY(-10px);
+	transform: translateY(-10px);
 }
 
 .service-card {
-  transition: transform 1s ease-in-out, background-color 1s, color 1s , box-shadow 1s;
-  will-change: transform, box-shadow;
+	transition: transform 1s ease-in-out, background-color 1s, color 1s,
+		box-shadow 1s;
+	will-change: transform, box-shadow;
 }
 
 .service-card:hover {
-  background-color: #fff;
-  /* glowing lime color */
-  box-shadow: 0 15px 30px rgba(40,
-    240,
-    180, 0.7);
-  /* glowing lime shadow */
+	background-color: #fff;
+	/* glowing lime color */
+	box-shadow: 0 15px 30px rgba(40, 240, 180, 0.7);
+	/* glowing lime shadow */
 }
 
 .service-card:hover h3 {
-  color: #000;
- font-weight: 700;
+	color: #000;
+	font-weight: 700;
 }
 
 .service-card:hover p {
-  color: #1f2937;
+	color: #1f2937;
 }
-
-
-
 
 /* carousel */
 .carousel-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	perspective: 1200px;
+	width: 100%;
 }
 
 .project-carousel {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .carousel-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 400px;
 }
 
 .carousel-slide-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100%;
 }
 
 .carousel-slide {
-  position: absolute;
-  top: 0;
-  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
-  opacity: 0;
-  width: 300px;
-  height: 300px;
-  will-change: transform, opacity;
+	position: absolute;
+	top: 0;
+	transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+	opacity: 0;
+	width: 300px;
+	height: 300px;
+	will-change: transform, opacity;
 }
 
 .carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.8s ease-in-out;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+	transition: transform 0.8s ease-in-out;
 }
 
 .carousel-slide.center {
-  transform: translateZ(100px) scale(1.1);
-  opacity: 1;
+	transform: translateZ(100px) scale(1.1);
+	opacity: 1;
 }
 
 .carousel-slide.left {
-  transform: translateX(-120%) rotateY(30deg);
-  opacity: 0.5;
+	transform: translateX(-120%) rotateY(30deg);
+	opacity: 0.5;
 }
 
 .carousel-slide.right {
-  transform: translateX(120%) rotateY(-30deg);
-  opacity: 0.5;
+	transform: translateX(120%) rotateY(-30deg);
+	opacity: 0.5;
 }
 
 .carousel-button {
-  
-  position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.619);
-    border: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.619);
+	border: none;
+	padding: 0.5rem;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease;
 }
 .carousel-button.prev {
-  left: 10px;
-  /* Position it a little bit from the left */
+	left: 10px;
+	/* Position it a little bit from the left */
 }
 
 .carousel-button.next {
-  right: 10px;
-  /* Position it a little bit from the right */
+	right: 10px;
+	/* Position it a little bit from the right */
 }
 
 .carousel-button:hover {
-  background-color: rgb(0, 0, 0);
-  /* Lighter hover effect */
+	background-color: rgb(0, 0, 0);
+	/* Lighter hover effect */
 }
 
 @media (min-width: 768px) {
-  .carousel-button.prev {
-    left: 20px;
-    /* Adjust for tablet screen */
-  }
+	.carousel-button.prev {
+		left: 20px;
+		/* Adjust for tablet screen */
+	}
 
-  .carousel-button.next {
-    right: 20px;
-  }
+	.carousel-button.next {
+		right: 20px;
+	}
 }
 
 @media (min-width: 1024px) {
-  .carousel-button.prev {
-    left: -50px;
-    /* Adjust for large screens */
-  }
+	.carousel-button.prev {
+		left: -50px;
+		/* Adjust for large screens */
+	}
 
-  .carousel-button.next {
-    right: -50px;
-  }
+	.carousel-button.next {
+		right: -50px;
+	}
 }
 .carousel-slide.center:hover img {
-  transform: scale(1.15);
+	transform: scale(1.15);
 }
 
 .project-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	display: none;
 }

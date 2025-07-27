@@ -8,51 +8,51 @@ import insta from "../assets/instagram-1-svgrepo-com.svg";
 import fb from "../assets/facebook-media-network-svgrepo-com.svg";
 import x from "../assets/x.svg";
 export const socials = [
-  {
-    icon: git,
-    handle: "@saifmaamun",
-    href: "https://github.com/saifmaamun",
-  },
-  {
-    icon: linkedin,
-    handle: "@saif-maamun",
-    href: "https://www.linkedin.com/in/saif-maamun",
-  },
-  {
-    icon: insta,
-    handle: "@desprdo",
-    href: "https://www.instagram.com/desprdo",
-  },
-  {
-    icon: fb,
-    handle: "@maamunsaif",
-    href: "https://www.facebook.com/maamunsaif",
-  },
-  {
-    icon: x,
-    handle: "@saif_maamun",
-    href: "https://x.com/saif_maamun",
-  },
+	{
+		icon: git,
+		handle: "@saifmaamun",
+		href: "https://github.com/saifmaamun",
+	},
+	{
+		icon: linkedin,
+		handle: "@saif-maamun",
+		href: "https://www.linkedin.com/in/saif-maamun",
+	},
+	{
+		icon: insta,
+		handle: "@desprdo",
+		href: "https://www.instagram.com/desprdo",
+	},
+	{
+		icon: fb,
+		handle: "@maamunsaif",
+		href: "https://www.facebook.com/maamunsaif",
+	},
+	{
+		icon: x,
+		handle: "@saif_maamun",
+		href: "https://x.com/saif_maamun",
+	},
 ];
 export const contacts = [
-  {
-    src: mail,
-    value: "saifmaamun@gmail.com",
-    href: "mailto:saifmaamun@gmail.com",
-  },
-  {
-    src: phone,
-    value: "+8801305797595",
-    href: "tel:+8801305797595",
-  },
-  {
-    src: whatsapp,
-    value: "+8801305797595",
-    href: "tel:+8801305797595",
-  },
-  {
-    src: address,
-    value: "Siddhirgonj, Narayangonj, Dhaka,Bangladesh",
-    href: "",
-  },
+	{
+		src: mail,
+		value: "saifmaamun@gmail.com",
+		href: "mailto:saifmaamun@gmail.com",
+	},
+	{
+		src: phone,
+		value: "+8801305797595",
+		href: "tel:+8801305797595",
+	},
+	{
+		src: whatsapp,
+		value: "+8801305797595",
+		href: "https://wa.me/+8801305797595",
+	},
+	{
+		src: address,
+		value: "Siddhirgonj, Narayangonj, Dhaka,Bangladesh",
+		href: "https://maps.app.goo.gl/Tfr9WVMfmzeN4jVz9",
+	},
 ];
